@@ -2,7 +2,7 @@
 <p align="center">
   <a href="https://websitelink">
 
-  <img width="60" alt="intercoin_image2" src="https://user-images.githubusercontent.com/35783824/52470977-325b3a00-2bc2-11e9-8f43-b804dc2bcc0e.png">
+  <img width="80" alt="intercoin_image2" src="https://user-images.githubusercontent.com/35783824/52470977-325b3a00-2bc2-11e9-8f43-b804dc2bcc0e.png">
 
   </a>
 </p>
