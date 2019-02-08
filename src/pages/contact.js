@@ -10,7 +10,7 @@ import AWSAppSyncClient from 'aws-appsync'
 import AppSyncConfig from '../aws-exports(8)'
 import { ApolloProvider } from 'react-apollo'
 import 'isomorphic-fetch' // Comment out this line results in an error ...
-
+import "../styled/cards.css"
 
 
 export const Content = styled.article`
