@@ -7,10 +7,10 @@ import Navigation from '../components/nav'
 import { Hero,  } from './about';
 import { Form } from '../components/Forms';
 import AWSAppSyncClient from 'aws-appsync'
-import AppSyncConfig from '../../src/aws-exports'
+import AppSyncConfig from '../aws-exports'
 import { ApolloProvider } from 'react-apollo'
 
-import Logo from '../components/logo'
+
 
 
 export const Content = styled.article`
