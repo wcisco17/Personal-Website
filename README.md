@@ -1,7 +1,9 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://websitelink">
-    <img alt="WS" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+
+  <img width="80" alt="intercoin_image2" src="https://user-images.githubusercontent.com/35783824/52470977-325b3a00-2bc2-11e9-8f43-b804dc2bcc0e.png">
+
   </a>
 </p>
 <h1 align="center">
