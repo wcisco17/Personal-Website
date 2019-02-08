@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 import styled from 'styled-components'
 import { widths } from '../config';
 import Skills from '../components/skills';
-// import "../styled/cards.css"
+import "../styled/cards.css"
 
 export const Hero = styled.div`
 
