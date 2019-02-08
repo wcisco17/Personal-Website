@@ -7,7 +7,7 @@ import Navigation from '../components/nav'
 import { Hero,  } from './about';
 import { Form } from '../components/Forms';
 import AWSAppSyncClient from 'aws-appsync'
-import AppSyncConfig from '../aws-exports'
+import AppSyncConfig from '../aws-exports.js'
 import { ApolloProvider } from 'react-apollo'
 
 

@@ -8,7 +8,7 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 import Title from "../components/Title";
 import AWSAppSyncClient from 'aws-appsync'
-import AppSyncConfig from '../aws-exports'
+import AppSyncConfig from '../aws-exports.js'
 import { ApolloProvider } from 'react-apollo'
 
 
