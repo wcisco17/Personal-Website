@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://websitelink">
-    <img alt="WS" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+    <img alt="WS" src="file:///Users/wcisco17/Downloads/logo-ws.png" width="60" />
   </a>
 </p>
 <h1 align="center">
