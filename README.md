@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://websitelink">
-    <img alt="WS" src="file:///Users/wcisco17/Downloads/logo-ws.png" width="60" />
+    ![logo-ws](https://user-images.githubusercontent.com/35783824/52470977-325b3a00-2bc2-11e9-8f43-b804dc2bcc0e.png)
   </a>
 </p>
 <h1 align="center">
