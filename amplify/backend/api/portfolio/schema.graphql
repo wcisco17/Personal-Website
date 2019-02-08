@@ -1,0 +1,20 @@
+type Projects @model {
+	id: ID!
+	title: String!
+	description: String!
+	image: String
+	createdOn: String!
+	type: String!
+	website: String
+	git: String
+	color: String
+}
+
+type Contact @model {
+    id: ID!
+    name: String!
+    email: String!
+    message: String!
+}
+
+

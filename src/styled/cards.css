@@ -1,0 +1,162 @@
+.container {
+	max-width: 300px;
+}
+.img-container {
+	padding-top: 0.3rem;
+	
+}
+.img {
+	padding-top: 1rem;
+	background-position: center;
+	background-size: cover;
+	width: 23%;
+}
+.p{
+	color: azure;
+	background: darkgray;
+}
+.container p {
+	font-size: 0.7rem;
+	font-weight: 900;
+}
+
+.v {
+	color: azure;
+	font-size: 1rem;
+	/* border-bottom: 5px solid #FBB03B; */
+	/* spadding-bottom: 12px; */
+	
+}
+.line0 {
+	width: 5px;
+	height: 5px;
+	padding-left: 100px;
+	position: relative;
+	top: -7px;
+	background-color: #FBB03B;
+}
+
+@media(max-width: 750px) {
+	.img {
+		display: none;
+	}
+}
+
+.x {
+	font-size: 1rem;
+}
+
+#page-wrap {
+	text-align: right;
+	/* Prevent sidebar from showing a scrollbar on page */
+	overflow: auto;
+}
+  
+  /* Individual item */
+  .bm-item {
+	display: inline-block;
+  
+	/* Our sidebar item styling */
+	text-decoration: none;
+	margin-bottom: 10px;
+	color: #FBB03B;
+	transition: color 0.2s;
+  }
+  
+  /* Change color on hover */
+  .bm-item:hover {
+	color: #D4145A;
+  }
+  
+  /* The rest copied directly from react-burger-menu docs */
+  
+  /* Position and sizing of burger button */
+  .bm-burger-button {
+	position: fixed;
+	width: 36px;
+	height: 30px;
+	right: 36px;
+	top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+	border-radius: 10px;
+	background: #FBB03B;
+	
+  }
+  
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+	height: 24px;
+	width: 24px;
+	
+  }
+  
+  /* Color/shape of close button cross */
+  .bm-cross {
+	background: #FBB03B;
+  }
+  
+  /* General sidebar styles */
+  .bm-menu {
+	background: white;
+	padding: 2.5em 1.5em 0;
+	font-size: 1.15em;
+  }
+  
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+	fill: #373a47;
+  }
+  
+  /* Wrapper for item list */
+  .bm-item-list {
+	color: #000000;
+  }
+  
+  /* Styling of overlay */
+  .bm-overlay {
+	background: rgba(0, 0, 0, 0.3);
+	}
+	
+
+	.timeline-item {
+    background: #fff;
+    border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 3px;
+    padding: 15px;
+
+    margin: 0 auto;
+    max-width: 572px;
+    min-height: 200px;
+}
+
+@keyframes placeHolderShimmer{
+	0%{
+			background-position: -468px 0
+	}
+	100%{
+			background-position: 468px 0
+	}
+}
+
+.animated-background {
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-name: placeHolderShimmer;
+	animation-timing-function: linear;
+	background: #f6f7f8;
+	background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+	background-size: 800px 104px;
+	height: 300px;
+	position: relative;
+}
+
+
+
+
+
+

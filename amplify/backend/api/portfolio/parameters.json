@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "portfolio",
+    "schemaGraphql": "s3://portfolio-1-20190126201208-deployment/amplify-appsync-files/schema.graphql.1549267953700",
+    "ResolverBucket": "portfolio-1-20190126201208-deployment",
+    "ResolverRootKey": "amplify-appsync-files",
+    "DeploymentTimestamp": "1549267953700"
+}

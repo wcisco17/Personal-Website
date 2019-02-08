@@ -1,0 +1,184 @@
+type Projects {
+  id: ID!
+  title: String!
+  description: String!
+  image: String
+  createdOn: String!
+  type: String!
+  website: String
+  git: String
+  color: String
+}
+
+type Contact {
+  id: ID!
+  name: String!
+  email: String!
+  message: String!
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelProjectsConnection {
+  items: [Projects]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelProjectsFilterInput {
+  id: ModelIDFilterInput
+  title: ModelStringFilterInput
+  description: ModelStringFilterInput
+  image: ModelStringFilterInput
+  createdOn: ModelStringFilterInput
+  type: ModelStringFilterInput
+  website: ModelStringFilterInput
+  git: ModelStringFilterInput
+  color: ModelStringFilterInput
+  and: [ModelProjectsFilterInput]
+  or: [ModelProjectsFilterInput]
+  not: ModelProjectsFilterInput
+}
+
+type Query {
+  getProjects(id: ID!): Projects
+  listProjectss(filter: ModelProjectsFilterInput, limit: Int, nextToken: String): ModelProjectsConnection
+  getContact(id: ID!): Contact
+  listContacts(filter: ModelContactFilterInput, limit: Int, nextToken: String): ModelContactConnection
+}
+
+input CreateProjectsInput {
+  id: ID
+  title: String!
+  description: String!
+  image: String
+  createdOn: String!
+  type: String!
+  website: String
+  git: String
+  color: String
+}
+
+input UpdateProjectsInput {
+  id: ID!
+  title: String
+  description: String
+  image: String
+  createdOn: String
+  type: String
+  website: String
+  git: String
+  color: String
+}
+
+input DeleteProjectsInput {
+  id: ID
+}
+
+type Mutation {
+  createProjects(input: CreateProjectsInput!): Projects
+  updateProjects(input: UpdateProjectsInput!): Projects
+  deleteProjects(input: DeleteProjectsInput!): Projects
+  createContact(input: CreateContactInput!): Contact
+  updateContact(input: UpdateContactInput!): Contact
+  deleteContact(input: DeleteContactInput!): Contact
+}
+
+type Subscription {
+  onCreateProjects: Projects @aws_subscribe(mutations: ["createProjects"])
+  onUpdateProjects: Projects @aws_subscribe(mutations: ["updateProjects"])
+  onDeleteProjects: Projects @aws_subscribe(mutations: ["deleteProjects"])
+  onCreateContact: Contact @aws_subscribe(mutations: ["createContact"])
+  onUpdateContact: Contact @aws_subscribe(mutations: ["updateContact"])
+  onDeleteContact: Contact @aws_subscribe(mutations: ["deleteContact"])
+}
+
+type ModelContactConnection {
+  items: [Contact]
+  nextToken: String
+}
+
+input ModelContactFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  email: ModelStringFilterInput
+  message: ModelStringFilterInput
+  and: [ModelContactFilterInput]
+  or: [ModelContactFilterInput]
+  not: ModelContactFilterInput
+}
+
+input CreateContactInput {
+  id: ID
+  name: String!
+  email: String!
+  message: String!
+}
+
+input UpdateContactInput {
+  id: ID!
+  name: String
+  email: String
+  message: String
+}
+
+input DeleteContactInput {
+  id: ID
+}
