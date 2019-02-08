@@ -11,6 +11,14 @@ module.exports = {
                   ],
             }
         },
-        `gatsby-plugin-react-helmet`
+        {
+         resolve:`gatsby-plugin-react-helmet`
+        },
+        {
+            resolve: `gatsby-plugin-styled-components`,
+            options: {
+                displayName: false
+            }
+        }
     ]
 }
