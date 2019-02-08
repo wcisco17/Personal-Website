@@ -37,7 +37,7 @@
 
 <p align="center">
   <strong>
-    Available in at (Coming Soon)
+    Available at (Coming Soon)
   </strong>
 </p>
 
