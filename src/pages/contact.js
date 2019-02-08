@@ -7,9 +7,9 @@ import Navigation from '../components/nav'
 import { Hero,  } from './about';
 import { Form } from '../components/Forms';
 import AWSAppSyncClient from 'aws-appsync'
-import AppSyncConfig from '../aws-exports.js'
+import AppSyncConfig from '../aws-exports(8)'
 import { ApolloProvider } from 'react-apollo'
-
+import 'isomorphic-fetch' // Comment out this line results in an error ...
 
 
 
@@ -53,8 +53,10 @@ export const Content = styled.article`
 `
 
 const client = new AWSAppSyncClient({
+  // disableOffline: true,
   url: AppSyncConfig.aws_appsync_graphqlEndpoint,
   region: AppSyncConfig.aws_appsync_region,
+  
   auth: {
     type: AppSyncConfig.aws_appsync_authenticationType,
     apiKey: AppSyncConfig.aws_appsync_apiKey,

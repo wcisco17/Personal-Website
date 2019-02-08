@@ -8,10 +8,10 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 import Title from "../components/Title";
 import AWSAppSyncClient from 'aws-appsync'
-import AppSyncConfig from '../aws-exports.js'
+import AppSyncConfig from '../aws-exports(8)'
 import { ApolloProvider } from 'react-apollo'
 
-
+import 'isomorphic-fetch' // Comment out this line results in an error ...
 
 import Navigation from '../components/nav'
 
@@ -113,6 +113,7 @@ export default () => (
 
 
 const client = new AWSAppSyncClient({
+  disableOffline: true,
   url: AppSyncConfig.aws_appsync_graphqlEndpoint,
   region: AppSyncConfig.aws_appsync_region,
   auth: {

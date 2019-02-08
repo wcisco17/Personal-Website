@@ -77,6 +77,7 @@ export const Containers = () => {
         query={graphqlOperation(listProjectss)}
          >
             {({ data, loading }) => {
+              console.log(data)
                 return (
                     <>
                     {loading  ? (
