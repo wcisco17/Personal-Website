@@ -10,7 +10,7 @@ const Image = styled.img`
 
     @media (max-width: ${widths.MEDIUM_WIDTH}px) {
             width: 80px;
-            padding: 0px 50px;
+            padding: 20px 20px;
     }
 `
 

@@ -14,11 +14,49 @@ import { Mutation } from 'react-apollo';
 import * as mutation from "../graphql/mutations";
 
 import styled from 'styled-components'
+import { widths } from '../config';
 
 
 const Wrapper = styled.div`
     position: relative;
     top: ${props => props.about === "block" ? "-120px" : "0px"};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    input {
+        width: 30rem;
+    }
+    textarea {
+        width: 30rem;
+    }
+    @media (max-width: ${widths.MEDIUM_WIDTH}px) {
+        input {
+            width: 20rem;
+        }
+        textarea {
+            width: 20rem;
+        }
+     
+    }
+    @media (max-width: ${widths.MOBILE_WIDTH}px) {
+        input {
+            width: 14rem;
+        }
+        textarea {
+            width: 14rem;
+        }
+     
+    }
+`
+
+const Title = styled.h1`
+      background-color: white;
+      padding-left: 2.5rem;
+      @media (max-width: ${widths.LARGE_WIDTH}px) {
+        padding: 0rem;
+        text-align: center;
+    }
 `
 
 
@@ -60,12 +98,13 @@ export const Form = (props) => {
                         return (
                             <>
                             <Content>
+                                <Title>{props.title}</Title>
                         <Wrapper about={props.show} >
                             <div style={{ display: `${props.show}` }} >
                             <Module
                             />
                             </div>
-                            <h1>{props.title}</h1>
+                            
                             <form 
                             onSubmit={handleSubmit}
                             name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">

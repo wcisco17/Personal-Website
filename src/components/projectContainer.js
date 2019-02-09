@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 import { Connect } from "aws-amplify-react";
 import { graphqlOperation } from 'aws-amplify'
 import { listProjectss } from "../graphql/queries";
-
+import ContentLoader from 'react-content-loader'
 import styled from 'styled-components'
 
 import tw from 'tailwind.macro'
@@ -59,52 +59,60 @@ export const Title = styled.div`
 
 export const ProjectCard = ({ title, link, children, bg, img }) => (
     <Wrapper href={link} target="_blank" rel="noopener noreferrer" img={img} bg={bg}>
-        <Fade top delay={500}>
         <Text>{children}</Text>
         <Title>{title}</Title>
-        </Fade>
   </Wrapper>
 )
 
 
+const Loader = () => (
+    <ContentLoader
+    height={170}
+		width={400}
+    speed={2}
+    primaryColor="#f3f3f3"
+		secondaryColor="#ecebeb"
+    >
+  
+    </ContentLoader>
+)
 
 
 
 
 export const Containers = () => {
     return (
-        <Connect 
-        query={graphqlOperation(listProjectss)}
-         >
+        <Connect query={graphqlOperation(listProjectss)}>
             {({ data, loading }) => {
-              console.log(data)
                 return (
                     <>
                     {loading  ? (
-                    <p>Loading...</p> ) :
+                    <Loader /> ) :
+                    <Fade bottom delay={200} >
                     <ProjectsWrapper  >
-                            {data.listProjectss.items.map((project) => {
-                                const {
-                                    title,
-                                    description,
-                                    website,
-                                    color,
-                                    image,
-                                    id
-                                } = project
-                                return (
+                             {data.listProjectss.items.map((project) => {
+                              const {
+                                title,
+                                description,
+                                website,
+                                color,
+                                image,
+                                id
+                              } = project
+                              return (
                                 
-                                    <ProjectsPost
-                                    key={id}
-                                    title={title}
-                                    description={description}
-                                    website={website}
-                                    color={color}
-                                    image={image}
-                                    />
+                                <ProjectsPost
+                                key={id}
+                                title={title}
+                                description={description}
+                                website={website}
+                                color={color}
+                                image={image}
+                                />
                                 )
-                            })}
+                              })} 
                         </ProjectsWrapper>
+                     </Fade>
                             }     
                     </>
                 )

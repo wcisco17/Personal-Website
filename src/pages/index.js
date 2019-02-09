@@ -2,7 +2,7 @@ import React from "react"
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import TextLoop from 'react-text-loop'
-import Fade from 'react-reveal/Fade';
+
 import {Wrapper} from "../components/Wrapper";
 import Layout from "../components/Layout";
 import Button from "../components/Button";
@@ -101,9 +101,9 @@ export default () => (
             </Hero>
             <Content>
                 <Title>Check out my latest Projects</Title>
-                <Fade bottom delay={200} >
+                
                   <ApolloContainer />
-                </Fade>
+                
             </Content>
         </Wrapper>
     </Layout>

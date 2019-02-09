@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout';
 import Fade from 'react-reveal/Fade';
-import { Wrapper } from '../pages/about'
+
 import styled from 'styled-components'
 import Navigation from '../components/nav'
 import { Hero,  } from './about';
@@ -11,6 +11,7 @@ import AppSyncConfig from '../aws-exports(8)'
 import { ApolloProvider } from 'react-apollo'
 import 'isomorphic-fetch' // Comment out this line results in an error ...
 import "../styled/cards.css"
+import { widths } from '../config';
 
 
 export const Content = styled.article`
@@ -22,13 +23,17 @@ export const Content = styled.article`
   background-color: ${props => props.theme.colors.bg};
   z-index: 9000;
   margin-top: -3rem;
+  overflow: hidden;
   
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    padding: 3rem 3rem;
+
+
+  @media (max-width: ${widths.LARGE_WIDTH}px) {
+    padding: 5rem 0rem;        
   }
-  @media (max-width: ${props => props.theme.breakpoints.phone}) {
-    padding: 2rem 1.5rem;
-  }
+
+
+
+
   p {
     font-size: 1.1rem;
     letter-spacing: -0.003em;
@@ -46,11 +51,36 @@ export const Content = styled.article`
     font-size: 16px;
   }
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
 `
+const Wrapper = styled.section`
+        grid-column: 2;
+        box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        border-radius: 1rem;
+        margin: 0px 20vh;
+        position: relative;
+        top: -65px;
+        padding: ${props => props.about};
+        
+        @media (max-width: ${widths.EXTRA_LARGE_WIDTH}px) {
+            
+            margin: 0px 4vh
+        }
+        @media (max-width: ${widths.LARGE_WIDTH}px) {
+         
+            margin: 0px 8vh
+        }
+        @media (max-width: ${widths.MOBILE_WIDTH}px) {
+            
+            margin: 0px 1vh;
+        }
+        overflow: hidden;
+`
+
+
+
+
 
 const client = new AWSAppSyncClient({
   // disableOffline: true,
@@ -116,7 +146,7 @@ const Contact = ({ show, onModuleClose, onModuleShow }) => (
     <Navigation>
         <Layout>
             <Hero>
-              <Fade top delay={200} >
+              <Fade top delay={50} >
                   <h1 className="header-about" >Contact</h1>
               </Fade>
             </Hero>

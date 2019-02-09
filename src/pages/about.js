@@ -36,11 +36,12 @@ export const Wrapper = styled.section`
         }
         @media (max-width: ${widths.LARGE_WIDTH}px) {
             padding: 3rem 2rem;
-            margin: 0px 8vh
+            margin: 0px 8vh;
+            text-align: center;
         }
         @media (max-width: ${widths.MOBILE_WIDTH}px) {
             padding: 2rem 1.2em;
-            margin: 0px 3vh;
+            margin: 0px 1vh;
         }
         overflow: hidden;
 `
@@ -63,6 +64,10 @@ export const Content = styled.div`
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: 1fr;
         }
+
+
+}
+        
 `
 
 
