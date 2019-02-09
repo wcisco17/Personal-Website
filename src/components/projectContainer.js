@@ -70,8 +70,6 @@ const Loader = () => (
     height={170}
 		width={400}
     speed={2}
-    primaryColor="#f3f3f3"
-		secondaryColor="#ecebeb"
     >
   
     </ContentLoader>
