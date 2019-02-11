@@ -11,7 +11,7 @@ import AppSyncConfig from '../aws-exports(8)'
 import { ApolloProvider } from 'react-apollo'
 import 'isomorphic-fetch' // Comment out this line results in an error ...
 import "../styled/cards.css"
-import { widths } from '../config';
+import { widths, fading } from '../config';
 
 
 export const Content = styled.article`
@@ -146,7 +146,7 @@ const Contact = ({ show, onModuleClose, onModuleShow }) => (
     <Navigation>
         <Layout>
             <Hero>
-              <Fade top delay={50} >
+              <Fade top delay={fading.fad} >
                   <h1 className="header-about" >Contact</h1>
               </Fade>
             </Hero>

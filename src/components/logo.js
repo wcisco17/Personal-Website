@@ -1,5 +1,5 @@
 import React from 'react'
-import { widths } from "../config";
+import { widths, fading } from "../config";
 import styled, { keyframes, css } from 'styled-components'
 import Fade from 'react-reveal/Fade';
 
@@ -48,10 +48,9 @@ const Logo = styled.img`
 
 export default () => {
     return (
-    <Fade top delay={200} >
+    <Fade top delay={fading.fad} >
         <ContainerLogo>
             <Logo alt='...' src={require('../images/logo-ws.png')} />
         </ContainerLogo>
     </Fade>
-    )
-}
+    )}

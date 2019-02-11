@@ -3,7 +3,7 @@ import Navigation from '../components/nav'
 import Layout from '../components/Layout';
 import Fade from 'react-reveal/Fade';
 import styled from 'styled-components'
-import { widths } from '../config';
+import { widths, fading } from '../config';
 import Skills from '../components/skills';
 import "../styled/cards.css"
 
@@ -78,7 +78,7 @@ export default () => {
         <Navigation>
             <Layout>
             <Hero>
-                <Fade top delay={200} >
+                <Fade top delay={fading.fad} >
                     <h1 className="header-about" >Tech</h1>
                 </Fade>
           </Hero>

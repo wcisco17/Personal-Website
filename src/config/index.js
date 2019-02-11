@@ -33,6 +33,9 @@ const breakpoints = {
   phone: '600px',
 }
 
+export const fading = {
+    fad: 50
+}
 
 
 export const widths = {
