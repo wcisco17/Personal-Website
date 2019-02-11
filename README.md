@@ -39,7 +39,7 @@
 
 <p align="center">
   <strong>
-    Available at (Coming Soon)
+    Available at www.sissoko.club
   </strong>
 </p>
 
