@@ -12,9 +12,9 @@
 
 
 <p align="center">
-  <a href="#">
+  <a href="https://app.netlify.com/sites/practical-mahavira-2a74c0/deploys">
     <img
-      src="https://app.netlify.com/sites/practical-mahavira-2a74c0/deploys"
+      src="https://api.netlify.com/api/v1/badges/279adfbe-dd11-487c-9ab9-cecc21fc4d69/deploy-status"
       alt="Netlify"
     />
   </a>
