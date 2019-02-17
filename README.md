@@ -34,7 +34,7 @@
 </p>
 
 <p align="center">
-  My personal portfolio & Blog (Coming Soon). Built with <a href="https://www.gatsbyjs.org">Gatsby.js</a>.
+  My personal portfolio. Built with <a href="https://www.gatsbyjs.org">Gatsby.js</a>.
 </p>
 
 <p align="center">
