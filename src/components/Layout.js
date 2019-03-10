@@ -1,10 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
-
-import theme from '../config/index'
-
+import PropTypes from 'prop-types';
+import React from 'react';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import theme from '../config/index';
 
 const GlobalStyled = createGlobalStyle`
   *,
@@ -193,9 +190,6 @@ const Footer = styled.footer`
   }
 `
 
-
-
-
 const Layout = ({ children }) => (
       <ThemeProvider theme={theme}>
         <React.Fragment>
@@ -207,7 +201,7 @@ const Layout = ({ children }) => (
           </Footer>
         </React.Fragment>
       </ThemeProvider>
-)
+);
 
 export default Layout
 

@@ -1,33 +1,22 @@
-import React from "react"
-import styled from 'styled-components'
-import { Link } from 'gatsby'
-import TextLoop from 'react-text-loop'
-
-import {Wrapper} from "../components/Wrapper";
-import Layout from "../components/Layout";
+import Amplify from 'aws-amplify';
+import AWSAppSyncClient from 'aws-appsync';
+import { Link } from 'gatsby';
+import 'isomorphic-fetch'; // Comment out this line results in an error ...
+import React from "react";
+import { ApolloProvider } from 'react-apollo';
+import TextLoop from 'react-text-loop';
+import styled from 'styled-components';
+import AppSyncConfig from '../aws-exports(8)';
 import Button from "../components/Button";
-import Title from "../components/Title";
-import AWSAppSyncClient from 'aws-appsync'
-import AppSyncConfig from '../aws-exports(8)'
-import { ApolloProvider } from 'react-apollo'
-
-import 'isomorphic-fetch' // Comment out this line results in an error ...
-
-import Navigation from '../components/nav'
-
-import "../styled/cards.css"
-
-import Logo from '../components/logo'
-
+import Layout from "../components/Layout";
+import Logo from '../components/logo';
+import Navigation from '../components/nav';
 import { Containers } from "../components/projectContainer";
-import Amplify from 'aws-amplify'
+import Title from "../components/Title";
+import { Wrapper } from "../components/Wrapper";
+import "../styled/cards.css";
 
-
-Amplify.configure(AppSyncConfig)
-
-
-
-
+Amplify.configure(AppSyncConfig);
 
 const Content = styled.div`
   grid-column: 2;
@@ -70,8 +59,6 @@ const Hero = styled.div`
   }
 `
 
-
-
 export default () => (
   <>
     <Navigation>
@@ -111,7 +98,6 @@ export default () => (
     </>
 )
 
-
 const client = new AWSAppSyncClient({
   disableOffline: true,
   url: AppSyncConfig.aws_appsync_graphqlEndpoint,
@@ -121,12 +107,10 @@ const client = new AWSAppSyncClient({
     apiKey: AppSyncConfig.aws_appsync_apiKey,
     // jwtToken: async () => token, // Required when you use Cognito UserPools OR OpenID Connect. token object is obtained previously
   }
-})
-
+});
 
 const ApolloContainer = () => (
   <ApolloProvider client={client}>
     <Containers />
   </ApolloProvider>
-)
-
+);

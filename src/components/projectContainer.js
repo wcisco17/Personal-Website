@@ -1,13 +1,13 @@
-import React from "react"
-import ProjectsPost from '../templates/projects-post'
-import Fade from 'react-reveal/Fade';
+import { graphqlOperation } from 'aws-amplify';
 import { Connect } from "aws-amplify-react";
-import { graphqlOperation } from 'aws-amplify'
+import React from "react";
+import ContentLoader from 'react-content-loader';
+import Fade from 'react-reveal/Fade';
+import styled from 'styled-components';
+import tw from 'tailwind.macro';
 import { listProjectss } from "../graphql/queries";
-import ContentLoader from 'react-content-loader'
-import styled from 'styled-components'
+import ProjectsPost from '../templates/projects-post';
 
-import tw from 'tailwind.macro'
 
 const Wrapper = styled.a`
   max-width: 100%;
@@ -73,10 +73,7 @@ const Loader = () => (
     >
   
     </ContentLoader>
-)
-
-
-
+);
 
 export const Containers = () => {
     return (
