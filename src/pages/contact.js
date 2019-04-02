@@ -1,17 +1,16 @@
-import React from 'react'
-import Layout from '../components/Layout';
+import AWSAppSyncClient from 'aws-appsync';
+import 'isomorphic-fetch'; // Comment out this line results in an error ...
+import React from 'react';
+import { ApolloProvider } from 'react-apollo';
 import Fade from 'react-reveal/Fade';
-
-import styled from 'styled-components'
-import Navigation from '../components/nav'
-import { Hero,  } from './about';
+import styled from 'styled-components';
+import AppSyncConfig from '../../aws-exports(10)';
 import { Form } from '../components/Forms';
-import AWSAppSyncClient from 'aws-appsync'
-import AppSyncConfig from '../aws-exports(8)'
-import { ApolloProvider } from 'react-apollo'
-import 'isomorphic-fetch' // Comment out this line results in an error ...
-import "../styled/cards.css"
-import { widths, fading } from '../config';
+import Layout from '../components/Layout';
+import Navigation from '../components/nav';
+import { fading, widths } from '../config';
+import "../styled/cards.css";
+import { Hero } from './about';
 
 
 export const Content = styled.article`

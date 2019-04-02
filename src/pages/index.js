@@ -6,13 +6,12 @@ import React from "react";
 import { ApolloProvider } from 'react-apollo';
 import TextLoop from 'react-text-loop';
 import styled from 'styled-components';
-import AppSyncConfig from '../aws-exports(8)';
+import AppSyncConfig from '../../aws-exports(10)';
 import Button from "../components/Button";
 import Layout from "../components/Layout";
 import Logo from '../components/logo';
 import Navigation from '../components/nav';
 import { Containers } from "../components/projectContainer";
-import Title from "../components/Title";
 import { Wrapper } from "../components/Wrapper";
 import "../styled/cards.css";
 
@@ -59,6 +58,20 @@ const Hero = styled.div`
   }
 `
 
+const Text = styled.p`
+    text-align: center;
+    font-size: 1.68rem;
+    line-height: 3rem;
+    padding-top: 1rem;
+    margin-top: -1rem;
+    @media (max-width: ${props => props.theme.breakpoints.phone}) {
+      font-size: 1.25rem;
+    }
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+      font-size: 1.45rem;
+    }
+`;
+
 export default () => (
   <>
     <Navigation>
@@ -66,6 +79,7 @@ export default () => (
     <Layout>
         <Wrapper>
         <Hero>
+            <Text>(Under Construction {'\u{1F603}'})</Text>
                <TextLoop>
                     <h1>Hello.</h1>
                     <h1>你好.</h1>
@@ -86,12 +100,12 @@ export default () => (
                 </Button>
                 </Link>
             </Hero>
-            <Content>
+            {/* <Content>
                 <Title>Check out my latest Projects</Title>
                 
                   <ApolloContainer />
                 
-            </Content>
+            </Content> */}
         </Wrapper>
     </Layout>
     </Navigation>

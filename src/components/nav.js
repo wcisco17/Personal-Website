@@ -1,9 +1,5 @@
-import React from 'react'
-
-import { slide as Menu } from 'react-burger-menu'
-
-
-
+import React from 'react';
+import { slide as Menu } from 'react-burger-menu';
 
 export default ({ children }) => (
     <>
@@ -23,4 +19,3 @@ export default ({ children }) => (
     {children}
     </>
 )
-

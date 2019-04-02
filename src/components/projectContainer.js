@@ -1,13 +1,11 @@
 import { graphqlOperation } from 'aws-amplify';
 import { Connect } from "aws-amplify-react";
-import React from "react";
+import React, { Fragment } from "react";
 import ContentLoader from 'react-content-loader';
 import Fade from 'react-reveal/Fade';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import { listProjectss } from "../graphql/queries";
-import ProjectsPost from '../templates/projects-post';
-
 
 const Wrapper = styled.a`
   max-width: 100%;
@@ -65,47 +63,64 @@ export const ProjectCard = ({ title, link, children, bg, img }) => (
 )
 
 
-const Loader = () => (
-    <ContentLoader
-    height={170}
-		width={400}
-    speed={2}
-    >
-  
-    </ContentLoader>
-);
+const Loader = () =>
+{
+    return (
+        <ContentLoader
+        height={170}
+            width={400}
+        speed={2}
+        >
+        
+        </ContentLoader>
+    );
+}
 
 export const Containers = () => {
     return (
         <Connect query={graphqlOperation(listProjectss)}>
             {({ data, loading }) => {
+                if (typeof data === null || undefined) return <p>Projects Coming Soon</p>;
+                console.log(data)
+                // const a = data.listProjectss.items.map((list) => {
+                //     console.log(list)
+                // })
+                
                 return (
                     <>
-                    {loading  ? (
-                    <Loader /> ) :
+                    {loading  ? 
+                    (
+                        <Loader /> 
+                    ) :
                     <Fade bottom delay={200} >
                     <ProjectsWrapper  >
-                             {data.listProjectss.items.map((project) => {
-                              const {
-                                title,
-                                description,
-                                website,
-                                color,
-                                image,
-                                id
-                              } = project
-                              return (
-                                
-                                <ProjectsPost
-                                key={id}
-                                title={title}
-                                description={description}
-                                website={website}
-                                color={color}
-                                image={image}
-                                />
-                                )
-                              })} 
+                        {
+                                        <Fragment>
+                                        {data.listProjectss.items.map((project) => {
+                                            if (typeof project === null) return <Text>Projects Coming Soon..</Text>;
+                                            console.log(project)
+                                        // const {
+                                        //     title,
+                                        //     description,
+                                        //     website,
+                                        //     color,
+                                        //     image,
+                                        //     id,
+                                        // } = project;
+                                        // return (
+                                            
+                                        //     <ProjectsPost
+                                        //     key={id}
+                                        //     title={title}
+                                        //     description={description}
+                                        //     website={website}
+                                        //     color={color}
+                                        //     image={image}
+                                        //     />
+                                        //     )
+                                        })} 
+                                        </Fragment>
+                        }
                         </ProjectsWrapper>
                      </Fade>
                             }     
@@ -115,3 +130,18 @@ export const Containers = () => {
         </Connect>
     )
 }
+/**
+ * 
+ * 
+ * {
+  "__typename": "Projects",
+  "color": "linear-gradient(to right, #003cc6, #8128b6, #b5009f, #d70083, #eb1267)",
+  "createdOn": "2018",
+  "description": "DMCToken is a contract build on the Ganache Blockchain allows you to transfer tokens and check balance. The tech Stack includes: ReactJS, Drizzle, Truffle, and Solidity.",
+  "git": "https://github.com/wcisco17/DMCToken",
+  "id": "23s1b-67d7-4d29-8ed5-b5b47695c576",
+  "image": "https://raw.githubusercontent.com/wcisco17/DMCToken/master/src/components/assets/img/Screen%20Shot%202018-11-29%20at%205.08.52%20PM.png",
+  "title": "DMCToken",
+  "website": "https://github.com/wcisco17/DMCToken"
+}
+*/
