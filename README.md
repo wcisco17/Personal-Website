@@ -1,4 +1,5 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+# THIS REPO IS DEPRACTED AND NO LONGER MAINTAINED.
+
 <p align="center">
   <a href="https://websitelink">
 
